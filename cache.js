@@ -62,14 +62,20 @@ function Cache(capacity, aging) {
   };
 };
 
-var cache = new Cache(5, k=>{console.log('cache aging: ', k, cache.get(k)); cache.remove(k);});
-cache.put('1', Date.now());
-cache.put('2', Date.now());
-cache.put('3', Date.now());
-cache.put('4', Date.now());
-cache.put('5', Date.now());
-console.log(cache.get('1'));
-console.log(cache.get('2'));
-console.log(cache.get('3'));
-cache.put('6', Date.now());
-cache.foreach((k, v)=>{console.log(k, v);})
+module.exports = Cache;
+
+/* 
+Usage:
+
+  var cache = new Cache(5, k=>{console.log('cache aging: ', k, cache.get(k)); cache.remove(k);});
+  cache.put('1', Date.now());
+  cache.put('2', Date.now());
+  cache.put('3', Date.now());
+  cache.put('4', Date.now());
+  cache.put('5', Date.now());
+  console.log(cache.get('1'));
+  console.log(cache.get('2'));
+  console.log(cache.get('3'));
+  cache.put('6', Date.now());
+  cache.foreach((k, v)=>{console.log(k, v);})
+*/
