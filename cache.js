@@ -45,7 +45,7 @@ function Cache(capacity, aging) {
     --this.length;
     return this;
   };
-  this.removeAll = function() {
+  this.clear = function() {
     this.hash = {};
     this.length = 0;
     this.head = {};
